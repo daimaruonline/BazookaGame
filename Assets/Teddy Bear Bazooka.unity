@@ -1173,7 +1173,7 @@ GameObject:
   - 136: {fileID: 99221563}
   m_Layer: 0
   m_Name: Teddy
-  m_TagString: Untagged
+  m_TagString: Teddy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1222,6 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AvatarRange: 15
+  detonator: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a, type: 2}
 --- !u!136 &99221563
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4501,7 +4502,7 @@ GameObject:
   - 54: {fileID: 318832657}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9128,6 +9129,10 @@ Prefab:
     - target: {fileID: 400000, guid: b7e10e6faa72e074888c402c5a76cf81, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b7e10e6faa72e074888c402c5a76cf81, type: 3}
+      propertyPath: m_TagString
+      value: Teddy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7e10e6faa72e074888c402c5a76cf81, type: 3}

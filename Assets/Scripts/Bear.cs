@@ -19,7 +19,9 @@ public class Bear : MonoBehaviour {
 	private float SpeedDampTime = .25f;	
 	private float DirectionDampTime = .25f;	
 	private Vector3 TargetPosition = new Vector3(0,0,0);
-	
+
+	public GameObject detonator;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -69,14 +71,19 @@ public class Bear : MonoBehaviour {
         }		
 	}
 
-    void OnCollisionEnter(Collision collision)
-    {
-		if (avatar != null)
-        {
-			var currentState = avatar.GetCurrentAnimatorStateInfo(0);
-			var nextState = avatar.GetNextAnimatorStateInfo(0);
-			if (!currentState.IsName("Base Layer.Dying") && !nextState.IsName("Base Layer.Dying"))
-				avatar.SetBool("Dying", true);
-        }        
-    }
+	bool hitFlag = false;
+    void OnCollisionEnter (Collision collision) {
+		if (avatar != null) {
+			if (hitFlag == false && collision.collider.tag == "Bullet") {
+				hitFlag = true;
+				GameObject exp = (GameObject)Instantiate (detonator.gameObject, transform.position, Quaternion.identity);
+
+				var currentState = avatar.GetCurrentAnimatorStateInfo (0);
+				var nextState = avatar.GetNextAnimatorStateInfo (0);
+				if (!currentState.IsName ("Base Layer.Dying") && !nextState.IsName ("Base Layer.Dying")) {
+					avatar.SetBool ("Dying", true);
+				}
+			}        
+		}
+	}
 }
