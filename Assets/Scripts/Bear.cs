@@ -78,6 +78,9 @@ public class Bear : MonoBehaviour {
 				hitFlag = true;
 				GameObject exp = (GameObject)Instantiate (detonator.gameObject, transform.position, Quaternion.identity);
 
+				var gameControll = GameObject.Find ("GameControl");
+				gameControll.transform.GetComponent<GameControl>().AddScore();
+
 				var currentState = avatar.GetCurrentAnimatorStateInfo (0);
 				var nextState = avatar.GetNextAnimatorStateInfo (0);
 				if (!currentState.IsName ("Base Layer.Dying") && !nextState.IsName ("Base Layer.Dying")) {

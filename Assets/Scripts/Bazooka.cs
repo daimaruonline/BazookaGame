@@ -15,9 +15,9 @@ public class Bazooka : MonoBehaviour {
 
     void OnGUI()
     {
-        GUILayout.Label("Try to kill the bear!");
-		GUILayout.Label("Use Fire1 to shoot bullets");
-		GUILayout.Label("Use Fire2 to toggle aiming with bazooka");
+//		GUILayout.Label("Try to kill the bear!");
+//		GUILayout.Label("Use Fire1 to shoot bullets");
+//		GUILayout.Label("Use Fire2 to toggle aiming with bazooka");
     }
 
 	// Use this for initialization
