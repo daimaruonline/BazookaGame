@@ -85,6 +85,7 @@ public class Bear : MonoBehaviour {
 				var nextState = avatar.GetNextAnimatorStateInfo (0);
 				if (!currentState.IsName ("Base Layer.Dying") && !nextState.IsName ("Base Layer.Dying")) {
 					avatar.SetBool ("Dying", true);
+					Destroy(this.gameObject, 3.0f);
 				}
 			}        
 		}

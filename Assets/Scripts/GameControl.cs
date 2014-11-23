@@ -64,7 +64,7 @@ public class GameControl : MonoBehaviour {
 			GUI.Label(endMsgRect, "Game Cear!!", endMsgStyle);
 			GUI.Label(rankMsgRect, "Your Time is " + elapsedTime + ".", style);
 			if (GUI.Button(replayBtnRect, "Replay?")) {
-				Application.LoadLevel("Tedd Bear Bazooka");
+				Application.LoadLevel("Teddy Bear Bazooka");
 			}
 		}
 	}
