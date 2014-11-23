@@ -15,6 +15,8 @@ public class GameControl : MonoBehaviour {
 	Rect rankMsgRect = new Rect(50, 85, 250, 30);
 	Rect replayBtnRect = new Rect(50, 150, 120, 40);
 
+	bool playedEndVoice = false;
+
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < 9; i++) {
@@ -26,6 +28,8 @@ public class GameControl : MonoBehaviour {
 		endMsgRect = MakeRect(endMsgRect);
 		rankMsgRect = MakeRect(rankMsgRect);
 		replayBtnRect = MakeRect(replayBtnRect);
+
+		SoundManager.Instance.PlayStartVoice();
 	}
 	
 	// Update is called once per frame
@@ -61,6 +65,12 @@ public class GameControl : MonoBehaviour {
 		GUI.Label(scoreRect, "Score " + score, style);
 		GUI.Label(timerRect, "Time " + elapsedTime, style);
 		if (FinishedGame()) {
+
+			if (playedEndVoice == false) {
+				SoundManager.Instance.PlayEndVoice();
+				playedEndVoice = true;
+			}
+
 			GUI.Label(endMsgRect, "Game Cear!!", endMsgStyle);
 			GUI.Label(rankMsgRect, "Your Time is " + elapsedTime + ".", style);
 			if (GUI.Button(replayBtnRect, "Replay?")) {

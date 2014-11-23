@@ -40,6 +40,12 @@ public class Bazooka : MonoBehaviour {
             {
                animator.SetFloat("Fire",1);
 
+				if (UnityEngine.Random.Range(0, 2) == 0) {
+					SoundManager.Instance.PlayFireVoice1();
+				} else {
+					SoundManager.Instance.PlayFireVoice2();
+				}
+
                if (bullet != null && spawm != null)
                {
                    GameObject newBullet = Instantiate(bullet, spawm.transform.position , Quaternion.Euler(0, 0, 0)) as GameObject;

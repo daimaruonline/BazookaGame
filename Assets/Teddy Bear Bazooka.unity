@@ -19727,6 +19727,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionAudio: {fileID: 8300000, guid: 8f03951fee9bec9478d1ec979ba44677, type: 3}
+  startVoiceAudio: {fileID: 8300000, guid: e92736ec9b877452faed58eeda1a6f91, type: 3}
+  fireVoice1Audio: {fileID: 8300000, guid: 707b03d227df54d0495e3f03ad3f0131, type: 3}
+  fireVoice2Audio: {fileID: 8300000, guid: 03be7a201263f4718b161a6a0bb853c3, type: 3}
+  endVoiceAudio: {fileID: 8300000, guid: bc7997ca2d99243a49745a0b2a0eb635, type: 3}
 --- !u!82 &1106250054
 AudioSource:
   m_ObjectHideFlags: 0
